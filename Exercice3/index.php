@@ -2,8 +2,8 @@
 
 if (isset($_POST['login']) && isset($_POST['password'])) {
     if (empty($_COOKIE)) {
-        setcookie('Login', $_POST['login'], time() + 365 * 24 * 3600, '/', null, false, true);
-        setcookie('Motdepasse', $_POST['password'], time() + 365 * 24 * 3600, '/', null, false, true);
+        setcookie('Login', htmlspecialchars($_POST['login']), time() + 365 * 24 * 3600, '/', null, false, true);
+        setcookie('Motdepasse', htmlspecialchars($_POST['password']), time() + 365 * 24 * 3600, '/', null, false, true);
     }
 }
 
